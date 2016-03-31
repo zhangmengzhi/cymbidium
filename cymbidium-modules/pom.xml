@@ -16,5 +16,6 @@
 	</dependencies>
 
 	<build>
+    <finalName>cymbidium-modules</finalName>
 	</build>
 </project>
