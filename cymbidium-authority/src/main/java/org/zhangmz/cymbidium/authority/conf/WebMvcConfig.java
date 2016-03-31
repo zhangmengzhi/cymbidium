@@ -32,7 +32,7 @@ import org.springframework.web.bind.support.ConfigurableWebBindingInitializer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
-import org.zhangmz.cymbidium.modules.convert.StringToDateConverter;
+import org.zhangmz.cymbidium.authority.helper.StringToDateConverter;
 
 /**
  * @author liuzh_3nofxnp
