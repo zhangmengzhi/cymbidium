@@ -88,7 +88,7 @@ public class AuthorityRestController {
 		
 		try {
 			enduserService.logout(token);
-			sr = new SimpleResponse(Codes.SUCCESS_TRUE_NUMBER, Messages.SUCCESS, token);
+			sr = new SimpleResponse(Codes.SUCCESS_TRUE_NUMBER, Messages.SUCCESS);
 		} catch (Exception e) {
 			e.printStackTrace();
 			sr = new SimpleResponse(Codes.FAILURE_FALSE_NUMBER, e.getMessage());
@@ -109,9 +109,9 @@ public class AuthorityRestController {
 		
 		try {
 			if(enduserService.isLogin(token)){
-				sr = new SimpleResponse(Codes.SUCCESS_TRUE_NUMBER, Messages.SUCCESS, token);
+				sr = new SimpleResponse(Codes.SUCCESS_TRUE_NUMBER, Messages.SUCCESS);
 			}else{
-				sr = new SimpleResponse(Codes.FAILURE_FALSE_NUMBER, Messages.FAILURE, token);
+				sr = new SimpleResponse(Codes.FAILURE_FALSE_NUMBER, Messages.FAILURE);
 			}			
 		} catch (Exception e) {
 			e.printStackTrace();
