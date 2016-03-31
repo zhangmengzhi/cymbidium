@@ -1,0 +1,14 @@
+server:
+    port: 8082
+    context-path: #不写应用根目录
+    sessionTimeout: 30
+
+logging:
+    level:
+        org.zhangmz.cymbidium: DEBUG
+
+spring:
+    batch:
+        # concurrent: false
+        sayHelloTimeTask:
+            cronExpression: "*/10 * * * * ?"

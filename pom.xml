@@ -9,6 +9,7 @@
 	<name>Cymbidium Parent</name>
 	<modules>
 		<module>cymbidium-modules</module>
+		<module>cymbidium-batch</module>
 		<module>cymbidium-authority</module>
 	</modules>
 	<properties>
