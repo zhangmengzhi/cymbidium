@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+	<!-- 注意这个路径，不能有中文、空格 -->
+	<classPathEntry
+        location="C:\tmp\mysql-connector-java-5.1.37.jar" />
+        
+	<context id="DB2Tables" >
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/cymbidium1" 
+			userId="cymbidium1"
+			password="cymbidium1" />
+		<!-- 
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/cymbidium2" 
+			userId="cymbidium2"
+			password="cymbidium2" />
+		-->
+			
+		<javaModelGenerator targetPackage="org.zhangmz.cymbidium.batch.orm.model" 
+							targetProject="cymbidium-batch" />
+		
+		<sqlMapGenerator targetPackage="org.zhangmz.cymbidium.batch.orm.mapping" 
+						 targetProject="cymbidium-batch" />
+		
+		<!-- type= ANNOTATEDMAPPER MIXEDMAPPER XMLMAPPER -->
+		<javaClientGenerator type="XMLMAPPER" 
+							 targetPackage="org.zhangmz.cymbidium.batch.orm.mapper" 	
+							 targetProject="cymbidium-batch" />  
+
+		<table schema="" tableName="accounts" domainObjectName="Account" 
+			enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false" >
+		</table>
+
+	</context>
+</generatorConfiguration>

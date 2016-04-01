@@ -2,7 +2,9 @@ package org.zhangmz.cymbidium.batch;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Import;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.zhangmz.cymbidium.batch.conf.datasource.DynamicDataSourceRegister;
 
 /**
  * 
@@ -15,6 +17,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  */
 @SpringBootApplication
 @EnableScheduling
+@Import({DynamicDataSourceRegister.class}) // 注册动态多数据源
 public class BatchApplication {
 	public static void main(String[] args) {
         SpringApplication.run(BatchApplication.class, args);
