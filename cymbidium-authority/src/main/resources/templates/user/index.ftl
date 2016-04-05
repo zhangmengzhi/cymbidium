@@ -47,8 +47,8 @@
 						<div class="login-container">
 							<div class="center">
 								<h1>
-									<i class="icon-leaf green"></i>
-									<span class="red">Cymbidium</span>
+									<img src="${base}/static/assets/images/cymbidium32.png" class="img-rounded">
+									<span class="green">Cymbidium</span>
 									<span class="white">春兰</span>
 								</h1>
 								<h4 class="blue">&copy; 张孟志</h4>

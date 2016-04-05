@@ -58,7 +58,7 @@
 				<div class="navbar-header pull-left">
 					<a href="#" class="navbar-brand">
 						<small>
-							<i class="icon-leaf"></i>
+							<img src="${base}/static/assets/images/cymbidium32.png" class="img-rounded">
 							Cymbidium后台管理系统
 						</small>
 					</a><!-- /.brand -->

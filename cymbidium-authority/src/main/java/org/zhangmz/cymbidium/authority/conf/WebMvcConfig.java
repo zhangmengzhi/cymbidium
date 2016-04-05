@@ -24,14 +24,22 @@
 
 package org.zhangmz.cymbidium.authority.conf;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.support.GenericConversionService;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.web.bind.support.ConfigurableWebBindingInitializer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
+import org.springframework.web.servlet.resource.ResourceHttpRequestHandler;
 import org.zhangmz.cymbidium.authority.helper.StringToDateConverter;
 
 /**
@@ -66,10 +74,28 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     }
     
     // add by zhangmz 2016-01-06 spring boot 请求参数增加string 转date转换器 end
-    
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
     }
 
+    // add by zhangmz 2016-04-05 添加图标 begin
+    @Bean
+    public SimpleUrlHandlerMapping faviconHandlerMapping() {
+        SimpleUrlHandlerMapping mapping = new SimpleUrlHandlerMapping();
+        mapping.setOrder(Integer.MIN_VALUE);
+        mapping.setUrlMap(Collections.singletonMap("/**/favicon.ico",
+                faviconRequestHandler()));
+        return mapping;
+    }
+
+    @Bean
+    protected ResourceHttpRequestHandler faviconRequestHandler() {
+        ResourceHttpRequestHandler requestHandler = new ResourceHttpRequestHandler();
+        requestHandler.setLocations(Arrays
+                .<Resource> asList(new ClassPathResource("/static/")));
+        return requestHandler;
+    }
+    // add by zhangmz 2016-04-05 添加图标 end
 }
