@@ -15,6 +15,7 @@ import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.zhangmz.cymbidium.authority.AuthorityApplication;
 import org.zhangmz.cymbidium.modules.constants.Messages;
+import org.zhangmz.cymbidium.modules.helper.HttpClientHelper;
 import org.zhangmz.cymbidium.modules.vo.SimpleResponse;
 
 /**
