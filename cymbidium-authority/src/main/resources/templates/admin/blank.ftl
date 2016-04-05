@@ -56,7 +56,7 @@
 				<div class="navbar-header pull-left">
 					<a href="#" class="navbar-brand">
 						<small>
-							<img src="${base}/static/assets/images/cymbidium48.png" class="img-rounded">
+							<img src="${base}/static/assets/images/cymbidium32.png" class="img-rounded">
 							Ace Admin
 						</small>
 					</a><!-- /.brand -->

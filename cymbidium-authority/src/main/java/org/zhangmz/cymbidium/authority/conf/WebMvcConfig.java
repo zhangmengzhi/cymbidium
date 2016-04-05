@@ -80,22 +80,22 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
     }
 
-    // add by zhangmz 2016-04-05 添加图标 begin
-    @Bean
-    public SimpleUrlHandlerMapping faviconHandlerMapping() {
-        SimpleUrlHandlerMapping mapping = new SimpleUrlHandlerMapping();
-        mapping.setOrder(Integer.MIN_VALUE);
-        mapping.setUrlMap(Collections.singletonMap("/**/favicon.ico",
-                faviconRequestHandler()));
-        return mapping;
-    }
-
-    @Bean
-    protected ResourceHttpRequestHandler faviconRequestHandler() {
-        ResourceHttpRequestHandler requestHandler = new ResourceHttpRequestHandler();
-        requestHandler.setLocations(Arrays
-                .<Resource> asList(new ClassPathResource("/static/")));
-        return requestHandler;
-    }
-    // add by zhangmz 2016-04-05 添加图标 end
+//    // add by zhangmz 2016-04-05 添加图标 begin
+//    @Bean
+//    public SimpleUrlHandlerMapping faviconHandlerMapping() {
+//        SimpleUrlHandlerMapping mapping = new SimpleUrlHandlerMapping();
+//        mapping.setOrder(Integer.MIN_VALUE);
+//        mapping.setUrlMap(Collections.singletonMap("/**/favicon.ico",
+//                faviconRequestHandler()));
+//        return mapping;
+//    }
+//
+//    @Bean
+//    protected ResourceHttpRequestHandler faviconRequestHandler() {
+//        ResourceHttpRequestHandler requestHandler = new ResourceHttpRequestHandler();
+//        requestHandler.setLocations(Arrays
+//                .<Resource> asList(new ClassPathResource("/static/")));
+//        return requestHandler;
+//    }
+//    // add by zhangmz 2016-04-05 添加图标 end
 }
