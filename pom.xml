@@ -12,6 +12,7 @@
 		<module>cymbidium-modulesweb</module>
 		<module>cymbidium-batch</module>
 		<module>cymbidium-authority</module>
+		<module>cymbidium-service</module>
 	</modules>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
