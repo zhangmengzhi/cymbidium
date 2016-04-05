@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cymbidium 用户权限相关管理</title>
+        <title>Cymbidium 渠道服务相关管理</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- basic styles -->
@@ -49,7 +49,7 @@
 					<h1 class="grey lighter smaller">
 						<span class="blue bigger-125">
 							<i class="icon-sitemap"></i>
-						Cymbidium 用户权限相关管理
+						Cymbidium 渠道服务相关管理
 						</span>
 						修改自Pickles的 JAVA WEB SAAS 设计。
 					</h1>
