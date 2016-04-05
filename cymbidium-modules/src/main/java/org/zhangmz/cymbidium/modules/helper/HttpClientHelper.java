@@ -1,7 +1,4 @@
-/**
- * 
- */
-package org.zhangmz.cymbidium.authority.api;
+package org.zhangmz.cymbidium.modules.helper;
 
 import java.io.BufferedReader;
 import java.io.IOException;
