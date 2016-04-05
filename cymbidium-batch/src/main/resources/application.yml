@@ -1,4 +1,5 @@
 server:
+    # 改为batch后，该参数无用
     port: 8082
     context-path: #不写应用根目录
     sessionTimeout: 30
