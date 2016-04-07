@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.zhangmz.cymbidium.authority.orm.model.Enduser;
 import org.zhangmz.cymbidium.authority.service.EnduserService;
 import org.zhangmz.cymbidium.modules.constants.Codes;
 import org.zhangmz.cymbidium.modules.constants.Messages;
@@ -110,6 +111,11 @@ public class AuthorityRestController {
 		try {
 			if(enduserService.isLogin(token)){
 				sr = new SimpleResponse(Codes.SUCCESS_TRUE_NUMBER, Messages.SUCCESS);
+				// add by zhangmz 2016-04-07 返回用户信息  
+				// 为了安全重置无效密码，同时防止客户端做对象映射时因null失败
+				Enduser enduser = enduserService.getLoginCache(token);
+				enduser.setPassword("nothing");
+				sr.setResult("loginCache", enduser);
 			}else{
 				sr = new SimpleResponse(Codes.FAILURE_FALSE_NUMBER, Messages.FAILURE);
 			}			

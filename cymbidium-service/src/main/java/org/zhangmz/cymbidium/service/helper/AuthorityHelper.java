@@ -1,5 +1,6 @@
 package org.zhangmz.cymbidium.service.helper;
 
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.PostConstruct;
 import org.slf4j.Logger;
@@ -7,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.zhangmz.cymbidium.modules.constants.Messages;
+import org.zhangmz.cymbidium.modules.convert.JsonMapper;
 import org.zhangmz.cymbidium.modules.helper.HttpClientHelper;
 import org.zhangmz.cymbidium.modules.vo.SimpleResponse;
 import org.zhangmz.cymbidium.service.orm.model.Account;
@@ -30,6 +32,7 @@ import com.google.common.cache.CacheBuilder;
 @Component
 public class AuthorityHelper {
 	private static Logger logger = LoggerFactory.getLogger(AuthorityHelper.class);
+	private static JsonMapper binder = JsonMapper.nonDefaultMapper();
 
 	@Value("${cymbidium.authority.url.logout}")
 	private String isLogoutUrl;
@@ -152,9 +155,11 @@ public class AuthorityHelper {
 			if(simpleResponse.getCode() == 1
 				&& simpleResponse.getMessage().equals(Messages.SUCCESS)){
 				
-				// TODO 从cymbidium-authority服务中获取到用户信息，保存到本地缓存
-				// 现在只返回是否登陆，没有返回用户信息
-				
+				// 从cymbidium-authority服务中获取到用户信息，保存到本地缓存
+				// 注意对象转换后的数据类型 LinkedHashMap<String, Object>
+				Map cacheInfo = (Map) simpleResponse.getResult("loginCache");
+				Enduser enduser = binder.fromJson(binder.toJson(cacheInfo), Enduser.class);
+				this.putEnduser(token, enduser);
 				bln = true;
 			}
  		}

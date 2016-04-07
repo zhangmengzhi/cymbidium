@@ -224,6 +224,10 @@ public class EnduserService {
     public boolean isLogin(String token){
     	return authorityHelper.isLogin(token, 2);
     }   
+    
+    public Enduser getLoginCache(String token){
+    	return authorityHelper.getEnduser(token);
+    }
 
     public void invalidateEnduser(String token){
     	authorityHelper.invalidateEnduser(token);
