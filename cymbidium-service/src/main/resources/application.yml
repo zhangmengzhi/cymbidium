@@ -36,3 +36,10 @@ spring:
     freemarker:
         cache: false
         request-context-attribute: request
+
+cymbidium:
+    authority:
+        url:
+            login: http://localhost:8081/api/authoriry/login
+            logout: http://localhost:8081/api/authoriry/logout
+            islogin: http://localhost:8081/api/authoriry/islogin
