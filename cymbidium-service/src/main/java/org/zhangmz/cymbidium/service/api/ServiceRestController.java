@@ -6,11 +6,11 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.zhangmz.cymbidium.service.service.EnduserService;
+import org.zhangmz.cymbidium.service.helper.ChannelHelper;
+import org.zhangmz.cymbidium.service.service.channel.IChannelService;
+import org.zhangmz.cymbidium.service.helper.AuthorityHelper;
 import org.zhangmz.cymbidium.modules.vo.SimpleRequest;
 import org.zhangmz.cymbidium.modules.constants.Codes;
 import org.zhangmz.cymbidium.modules.constants.Messages;
@@ -81,9 +81,52 @@ import org.zhangmz.cymbidium.modules.vo.SimpleResponse;
 public class ServiceRestController {
 	private static Logger logger = LoggerFactory.getLogger(ServiceRestController.class);
 	private static JsonMapper binder = JsonMapper.nonDefaultMapper();
-	
+
+    @Autowired
+    private AuthorityHelper authorityHelper;
+    
 	@RequestMapping
 	public SimpleResponse index(HttpServletRequest httpRequest) {
-		return null;
+		IChannelService channelService = null;
+		SimpleResponse sr = null;
+		
+		// 封装参数/检查参数是否符合通信协议
+		SimpleRequest request = ChannelHelper.packageParameters(httpRequest);
+		logger.debug(binder.toJson(request));
+		
+		// 判断终端用户是否有权限访问（判断是否登陆）
+		// authorityHelper.isLogin(request.get_token_(), 2);
+		try {
+			// 注册/登陆/退出（？）不需要做权限校验
+			if(!"REGIST_ENDUSER".equals(request.get_code_()) 
+					&&  !"LOGIN_ENDUSER".equals(request.get_code_()) 
+					&&  !"LOGOUT_ENDUSER".equals(request.get_code_())){
+				if(StringUtils.isBlank(request.get_token_()) 
+					// 现在只支持终端用户
+					|| !authorityHelper.isLogin(request.get_token_(), 2)){
+					return new SimpleResponse(Codes.FAILURE_FALSE_NUMBER, 
+												Messages.MUST_BE_LOGGED);
+				}				
+			}			
+		} catch (Exception e) {
+			e.printStackTrace();
+			// return new SimpleResponse(Codes.FAILURE_FALSE_NUMBER, e.getMessage());
+			return new SimpleResponse(Codes.FAILURE_FALSE_NUMBER, Messages.MUST_BE_LOGGED);
+		}
+		
+		// 根据_code_来获取服务类
+		logger.debug(request.get_code_());
+		channelService = ChannelHelper.localizingResources(request.get_code_());
+		
+		// 服务处理
+		try {
+			sr = channelService.doService(request);
+		} catch (Exception e) {
+			e.printStackTrace();
+			// sr = new SimpleResponse(Codes.FAILURE_FALSE_NUMBER, e.getMessage());
+			sr = new SimpleResponse(Codes.FAILURE_FALSE_NUMBER, Messages.SYSTEM_BUSY);
+		}
+				
+		return sr;
 	}
 }
