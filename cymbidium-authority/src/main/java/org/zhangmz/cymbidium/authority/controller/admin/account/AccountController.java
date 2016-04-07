@@ -25,7 +25,6 @@ import com.github.pagehelper.PageInfo;
 /**
  * Title:AccountController.java
  * Description:账户处理控制器
- * Company: DigitalChina 2016
  * @author:张孟志
  * @date:2016年1月27日 上午11:07:34
  * 说明：账户处理控制器

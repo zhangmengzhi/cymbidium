@@ -14,7 +14,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 /**
  * Title:IndexController.java
  * Description:主页控制器
- * Company: DigitalChina 2016
  * @author:张孟志
  * @date:2016年1月25日 上午11:08:36
  * 说明：

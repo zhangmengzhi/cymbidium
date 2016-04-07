@@ -11,7 +11,6 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * Title:MainInfo.java
  * Description:控制台主页信息
- * Company: DigitalChina 2016
  * @author:张孟志
  * @date:2016年1月26日 上午10:08:53
  * 说明：控制台主页信息

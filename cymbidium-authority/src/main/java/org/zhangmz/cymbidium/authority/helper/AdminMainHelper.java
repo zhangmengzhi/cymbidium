@@ -18,7 +18,6 @@ import com.google.common.cache.CacheBuilder;
 /**
  * Title:AdminMainHelper.java
  * Description:pickles主控制台帮助类
- * Company: DigitalChina 2016
  * @author:张孟志
  * @date:2016年1月26日 上午8:53:10
  * 说明：pickles主控制台帮助类

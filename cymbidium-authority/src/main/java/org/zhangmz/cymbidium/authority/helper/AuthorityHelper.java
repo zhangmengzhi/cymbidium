@@ -20,7 +20,6 @@ import com.google.common.cache.CacheBuilder;
 /**
  * Title:AuthorityHelper.java
  * Description:权限助手
- * Company: DigitalChina 2016
  * @author:张孟志
  * @date:2016年1月25日 上午9:04:24
  * 说明： pickles将自行实现一个简单的权限管理

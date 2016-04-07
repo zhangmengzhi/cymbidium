@@ -19,7 +19,6 @@ import org.zhangmz.cymbidium.authority.service.AccountService;
 /**
  * Title:AdminIndexController.java
  * Description:管理员首页（登录页）控制器
- * Company: DigitalChina 2016
  * @author:张孟志
  * @date:2016年1月25日 下午3:15:00
  * 说明：管理员首页（登录页）控制器

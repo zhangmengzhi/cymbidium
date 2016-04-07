@@ -15,7 +15,6 @@ import org.zhangmz.cymbidium.modules.vo.SimpleResponse;
 /**
  * Title:AuthorityHelperAOP.java
  * Description:权限管理切面
- * Company: DigitalChina 2016
  * @author:张孟志
  * @date:2016年1月26日 下午3:49:39
  * 说明：
