@@ -1,5 +1,5 @@
 server:
-    port: 8083
+    port: 8084
     context-path: #不写应用根目录
     sessionTimeout: 30
 

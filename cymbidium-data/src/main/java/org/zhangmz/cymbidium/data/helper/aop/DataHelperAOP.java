@@ -40,7 +40,7 @@ public class DataHelperAOP {
     @Autowired
     private AuthorityHelper authorityHelper;
     
-    @Pointcut("execution(* org.zhangmz.cymbidium.data.api.ServiceRestController.*(..)) ")
+    @Pointcut("execution(* org.zhangmz.cymbidium.data.api.DataRestController.*(..)) ")
     private void serviceActionMethod() {}    
 	
     @Around("serviceActionMethod()")

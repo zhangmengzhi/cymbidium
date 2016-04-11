@@ -27,7 +27,7 @@ import org.zhangmz.cymbidium.modules.vo.SimpleResponse;
  * 说明： 服务接入口
  * 手机/平板（手持设备）、PC客户端/机器人（APP）、等多种渠道数据入口
  * 
-	接口请求地址: http://xxx.xxx.xxx/api/service
+	接口请求地址: http://xxx.xxx.xxx/api/data
 	接口请求方式: HTTP POST
 	接口报文编码: UTF-8
 	请求报文格式:
@@ -68,13 +68,9 @@ import org.zhangmz.cymbidium.modules.vo.SimpleResponse;
 		}
 	}
 	
-/api/service?_channel_=1&_version_=1.1&_token_=3d190529f12546288dd4141e8e3ce113&_code_=ENDUSER_LIST&_data_=
+/api/data?_channel_=1&_version_=1.1&_token_=3d190529f12546288dd4141e8e3ce113&_code_=ENDUSERS&_data_=
  * 
  * _code_ 说明：
- * REGIST_ENDUSER  终端用户注册          groupCode, phone, password
- * LOGIN_ENDUSER   终端用户登陆          groupCode, phone, password
- * LOGOUT_ENDUSER  终端用户退出
- * ENDUSER_LIST    查询终端用户列表   page, rows
  */
 @RestController
 @RequestMapping("/api/data")
@@ -116,7 +112,7 @@ public class DataRestController {
 		
 		// 根据_code_来获取服务类
 		logger.debug(request.get_code_());
-		channelService = ChannelHelper.localizingResources(request.get_code_());
+		channelService = ChannelHelper.localizingDataService();
 		
 		// 服务处理
 		try {
