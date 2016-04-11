@@ -11,6 +11,7 @@ import org.zhangmz.cymbidium.data.helper.SpringContextHelper;
 import org.zhangmz.cymbidium.modules.constants.Codes;
 import org.zhangmz.cymbidium.modules.constants.Messages;
 import org.zhangmz.cymbidium.modules.convert.JsonMapper;
+import org.zhangmz.cymbidium.modules.service.channel.IChannelService;
 import org.zhangmz.cymbidium.modules.vo.SimpleRequest;
 import org.zhangmz.cymbidium.modules.vo.SimpleResponse;
 

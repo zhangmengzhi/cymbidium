@@ -16,6 +16,7 @@ import org.zhangmz.cymbidium.service.helper.vo.EnduserElement;
 import org.zhangmz.cymbidium.modules.constants.Codes;
 import org.zhangmz.cymbidium.modules.constants.Messages;
 import org.zhangmz.cymbidium.modules.convert.JsonMapper;
+import org.zhangmz.cymbidium.modules.service.channel.IChannelService;
 import org.zhangmz.cymbidium.modules.vo.SimpleRequest;
 import org.zhangmz.cymbidium.modules.vo.SimpleResponse;
 import org.zhangmz.cymbidium.service.orm.model.Enduser;

@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.zhangmz.cymbidium.data.helper.ChannelHelper;
-import org.zhangmz.cymbidium.data.service.channel.IChannelService;
+import org.zhangmz.cymbidium.modules.service.channel.IChannelService;
 import org.zhangmz.cymbidium.data.helper.AuthorityHelper;
 import org.zhangmz.cymbidium.modules.vo.SimpleRequest;
 import org.zhangmz.cymbidium.modules.constants.Codes;

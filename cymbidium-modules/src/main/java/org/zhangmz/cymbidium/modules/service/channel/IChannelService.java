@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.zhangmz.cymbidium.service.service.channel;
+package org.zhangmz.cymbidium.modules.service.channel;
 
 import org.zhangmz.cymbidium.modules.vo.SimpleRequest;
 import org.zhangmz.cymbidium.modules.vo.SimpleResponse;

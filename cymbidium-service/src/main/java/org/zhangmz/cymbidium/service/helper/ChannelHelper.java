@@ -5,7 +5,7 @@ package org.zhangmz.cymbidium.service.helper;
 
 import javax.servlet.http.HttpServletRequest;
 import org.zhangmz.cymbidium.modules.vo.SimpleRequest;
-import org.zhangmz.cymbidium.service.service.channel.IChannelService;
+import org.zhangmz.cymbidium.modules.service.channel.IChannelService;
 
 /**
  * @ClassName:ChannelHelper.java

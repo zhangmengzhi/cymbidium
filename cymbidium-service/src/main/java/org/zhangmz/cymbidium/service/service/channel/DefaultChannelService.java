@@ -6,6 +6,7 @@ package org.zhangmz.cymbidium.service.service.channel;
 import org.springframework.stereotype.Service;
 import org.zhangmz.cymbidium.modules.constants.Codes;
 import org.zhangmz.cymbidium.modules.constants.Messages;
+import org.zhangmz.cymbidium.modules.service.channel.IChannelService;
 import org.zhangmz.cymbidium.modules.vo.SimpleRequest;
 import org.zhangmz.cymbidium.modules.vo.SimpleResponse;
 
