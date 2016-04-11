@@ -35,10 +35,12 @@ public class ChannelHelper {
 	}
 	
 	/**
-	 * TODO 需要重构
 	 * 定位服务资源
-	 * @param code
+	 * @param code 接口服务代码
 	 * @return
+	 * 说明：根据接口服务代码获取服务类
+	 * 
+	 * TODO 需要重构  可以将接口服务代码设计为服务Bean的名字，减少switch
 	 */
 	public static IChannelService localizingResources(String code) {
 		IChannelService channelService = null;
