@@ -63,6 +63,11 @@ public class AuthorityRestController {
 					+ ", password:" + password);
 			String token = enduserService.login(groupCode, phone, password);
 			sr = new SimpleResponse(Codes.SUCCESS_TRUE_NUMBER, Messages.SUCCESS, token);
+			// add by zhangmz 2016-04-11 返回用户信息  
+			// 为了安全重置无效密码，同时防止客户端做对象映射时因null失败
+			Enduser enduser = enduserService.getLoginCache(token);
+			enduser.setPassword("nothing");
+			sr.setResult("loginCache", enduser);
 		} catch (Exception e) {
 			e.printStackTrace();
 			sr = new SimpleResponse(Codes.FAILURE_FALSE_NUMBER, e.getMessage());
