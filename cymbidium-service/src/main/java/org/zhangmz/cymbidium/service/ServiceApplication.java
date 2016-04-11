@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
 
 /**
  * 
- * @ClassName:AuthorityApplication 
+ * @ClassName:ServiceApplication
  * @Description:SpringBoot 应用
  * @author:张孟志
  * @date:2016年3月31日 下午4:34:04 
