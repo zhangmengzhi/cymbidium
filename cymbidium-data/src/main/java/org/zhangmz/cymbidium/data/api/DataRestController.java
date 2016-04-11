@@ -19,12 +19,12 @@ import org.zhangmz.cymbidium.modules.vo.SimpleResponse;
 
 /**
  * 
- * @ClassName:ServiceRestController.java
- * @Description: 服务接入口
+ * @ClassName:DataRestController.java
+ * @Description: 渠道数据接入口
  * @author:张孟志
- * @date:2016年4月5日下午6:46:28
+ * @date:2016年3月10日下午6:11:02
  * @version V1.0
- * 说明： 服务接入口
+ * 说明：渠道接入口，用于数据上传
  * 手机/平板（手持设备）、PC客户端/机器人（APP）、等多种渠道数据入口
  * 
 	接口请求地址: http://xxx.xxx.xxx/api/data
@@ -77,9 +77,6 @@ import org.zhangmz.cymbidium.modules.vo.SimpleResponse;
 public class DataRestController {
 	private static Logger logger = LoggerFactory.getLogger(DataRestController.class);
 	private static JsonMapper binder = JsonMapper.nonDefaultMapper();
-
-    @Autowired
-    private AuthorityHelper authorityHelper;
     
 	@RequestMapping
 	public SimpleResponse index(HttpServletRequest httpRequest) {
@@ -89,26 +86,6 @@ public class DataRestController {
 		// 封装参数/检查参数是否符合通信协议
 		SimpleRequest request = ChannelHelper.packageParameters(httpRequest);
 		logger.debug(binder.toJson(request));
-		
-		// 判断终端用户是否有权限访问（判断是否登陆）
-		// authorityHelper.isLogin(request.get_token_(), 2);
-		try {
-			// 注册/登陆/退出（？）不需要做权限校验
-			if(!"REGIST_ENDUSER".equals(request.get_code_()) 
-					&&  !"LOGIN_ENDUSER".equals(request.get_code_()) 
-					&&  !"LOGOUT_ENDUSER".equals(request.get_code_())){
-				if(StringUtils.isBlank(request.get_token_()) 
-					// 现在只支持终端用户
-					|| !authorityHelper.isLogin(request.get_token_(), 2)){
-					return new SimpleResponse(Codes.FAILURE_FALSE_NUMBER, 
-												Messages.MUST_BE_LOGGED);
-				}				
-			}			
-		} catch (Exception e) {
-			e.printStackTrace();
-			// return new SimpleResponse(Codes.FAILURE_FALSE_NUMBER, e.getMessage());
-			return new SimpleResponse(Codes.FAILURE_FALSE_NUMBER, Messages.MUST_BE_LOGGED);
-		}
 		
 		// 根据_code_来获取服务类
 		logger.debug(request.get_code_());

@@ -12,16 +12,16 @@
 			userId="cymbidium"
 			password="cymbidium" />
 			
-		<javaModelGenerator targetPackage="org.zhangmz.cymbidium.authority.orm.model" 
-							targetProject="cymbidium-authority" />
+		<javaModelGenerator targetPackage="org.zhangmz.cymbidium.data.orm.model" 
+							targetProject="cymbidium-data" />
 		
-		<sqlMapGenerator targetPackage="org.zhangmz.cymbidium.authority.orm.mapping" 
-						 targetProject="cymbidium-authority" />
+		<sqlMapGenerator targetPackage="org.zhangmz.cymbidium.data.orm.mapping" 
+						 targetProject="cymbidium-data" />
 		
 		<!-- type= ANNOTATEDMAPPER MIXEDMAPPER XMLMAPPER -->
 		<javaClientGenerator type="XMLMAPPER" 
-							 targetPackage="org.zhangmz.cymbidium.authority.orm.mapper" 	
-							 targetProject="cymbidium-authority" />  
+							 targetPackage="org.zhangmz.cymbidium.data.orm.mapper" 	
+							 targetProject="cymbidium-data" />  
 
 		<table schema="" tableName="accounts" domainObjectName="Account" 
 			enableCountByExample="false"
