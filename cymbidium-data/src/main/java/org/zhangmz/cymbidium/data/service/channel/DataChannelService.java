@@ -35,7 +35,7 @@ public class DataChannelService implements IChannelService {
 		String objectName = request.get_code_();
 		// String data = request.get_data_();
 		
-		String objectClassName = "org.zhangmz.pickles.orm.model." + objectName; 
+		String objectClassName = "org.zhangmz.cymbidium.data.orm.model." + objectName; 
 		// String objectServiceName = "org.zhangmz.pickles.service." + objectName + "Service"; 
 		String objectBeanName = objectName.substring(0, 1).toLowerCase() + objectName.substring(1) + "Service";
 		String methodName = "save";
