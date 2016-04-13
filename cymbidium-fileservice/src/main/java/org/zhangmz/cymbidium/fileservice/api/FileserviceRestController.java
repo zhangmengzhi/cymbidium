@@ -14,11 +14,11 @@ import org.zhangmz.cymbidium.modules.vo.SimpleResponse;
 /**
  * 
  * @ClassName:FileserviceRestController
- * @Description: 渠道数据接入口
+ * @Description: 文件服务接口
  * @author:张孟志
  * @date:2016年3月10日下午6:11:02
  * @version V1.0
- * 说明：
+ * 说明：提供上传文件服务  返回文件链接地址
  */
 @RestController
 @RequestMapping("/api/fileservice")
@@ -27,11 +27,16 @@ public class FileserviceRestController {
 	private static JsonMapper binder = JsonMapper.nonDefaultMapper();
     
 	@RequestMapping(value = "/{TOKEN}", method = RequestMethod.POST)
-	public SimpleResponse index(@PathVariable String TOKEN, HttpServletRequest httpRequest) {
+	public SimpleResponse upload(@PathVariable String TOKEN, HttpServletRequest httpRequest) {
 		IChannelService channelService = null;
 		SimpleResponse sr = null;
 		
 				
 		return sr;
+	}
+	
+	@RequestMapping
+	public String index() {			
+		return "Hello, Welcome to use file service. try localhost:8085/images/cymbidium32.png";
 	}
 }

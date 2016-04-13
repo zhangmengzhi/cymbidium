@@ -36,7 +36,7 @@ public class FileserviceHelperAOP {
     @Autowired
     private AuthorityHelper authorityHelper;
     
-    @Pointcut("execution(* org.zhangmz.cymbidium.fileservice.api.FileserviceRestController.*(..)) ")
+    @Pointcut("execution(* org.zhangmz.cymbidium.fileservice.api.FileserviceRestController.upload(..)) ")
     private void serviceActionMethod() {}    
 	
     @Around("serviceActionMethod()")
