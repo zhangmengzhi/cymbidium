@@ -18,7 +18,6 @@ import org.zhangmz.cymbidium.modules.vo.SimpleResponse;
 import org.zhangmz.cymbidium.fileservice.helper.AuthorityHelper;
 import org.zhangmz.cymbidium.modules.constants.Codes;
 import org.zhangmz.cymbidium.modules.constants.Messages;
-import org.zhangmz.cymbidium.modules.convert.JsonMapper;
 
 /**
  * Title:AuthorityHelperAOP.java
@@ -31,7 +30,6 @@ import org.zhangmz.cymbidium.modules.convert.JsonMapper;
 @Component
 public class FileserviceHelperAOP {
 	private static Logger logger = LoggerFactory.getLogger(FileserviceHelperAOP.class);
-	private static JsonMapper binder = JsonMapper.nonDefaultMapper();
 
     @Autowired
     private AuthorityHelper authorityHelper;
@@ -45,7 +43,7 @@ public class FileserviceHelperAOP {
 		try{
 			 // 计算服务时间 begin
 	         // long start = System.currentTimeMillis();
-			 logger.debug("----------  FileserviceHelperAOP  ----------");
+			 logger.debug("----------  FileserviceHelperAOP begin  ----------");
 				 
 		 	// 获取方法参数值，请求地址包括TOKEN
             Object[] args = joinpoint.getArgs();
@@ -53,13 +51,14 @@ public class FileserviceHelperAOP {
                      	
         	// 目前只支持终端用户判断（不支持控制台用户）
         	if(StringUtils.isNotBlank(TOKEN) 
-        		&& authorityHelper.isLogin(TOKEN, 2)){
+        		&& authorityHelper.isLogin(TOKEN, 2)){        		
         		result = (SimpleResponse) joinpoint.proceed();
         	} else {
         		// 提示用户登陆
         		result = new SimpleResponse(Codes.FAILURE_FALSE_NUMBER, Messages.MUST_BE_LOGGED);
         	}
-	            
+
+			logger.debug("----------  FileserviceHelperAOP  end   ----------");
             // long end = System.currentTimeMillis();
             // System.out.println("end! performance took " + (end-start) + " milliseconds");
             // 计算服务时间 end
@@ -67,8 +66,7 @@ public class FileserviceHelperAOP {
         	e.printStackTrace();
         	result = new SimpleResponse(Codes.FAILURE_FALSE_NUMBER, e.getMessage());
         }
-
-		logger.debug(binder.toJson(result));
 		return result;
 	}
+    
 }

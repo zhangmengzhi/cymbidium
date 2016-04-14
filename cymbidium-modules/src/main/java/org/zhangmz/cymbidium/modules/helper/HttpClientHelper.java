@@ -56,8 +56,6 @@ public class HttpClientHelper {
 			return simpleResponse;
 		}
         
-        logger.debug("executing request " + httpGet.getURI());  
-        
         simpleResponse = doRequest(httpclient, httpGet);
         
         return simpleResponse;
@@ -79,8 +77,6 @@ public class HttpClientHelper {
 			simpleResponse = new SimpleResponse(Codes.FAILURE_FALSE_NUMBER, e.getMessage());
 			return simpleResponse;
 		}
-        
-        logger.debug("executing request " + httppost.getURI());  
         
         simpleResponse = doRequest(httpclient, httppost);
         
@@ -105,12 +101,10 @@ public class HttpClientHelper {
         MultipartEntityBuilder multipartEntityBuilder = MultipartEntityBuilder.create();   
         multipartEntityBuilder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);        
         multipartEntityBuilder.addPart("file", fileBody);
-        multipartEntityBuilder.addTextBody("SerialNumber", "0123456789");
+        // multipartEntityBuilder.addTextBody("fileName", filePathName.substring(filePathName.lastIndexOf('/')+1));
+        // multipartEntityBuilder.addTextBody("SerialNumber", "0123456789");
         
-        // HttpEntity httpEntity = multipartEntityBuilder.build();
-        // httppost.setEntity(httpEntity);  
         httppost.setEntity(multipartEntityBuilder.build());  
-        logger.debug("executing request " + httppost.getURI());  
         
         simpleResponse = doRequest(httpclient, httppost);
         

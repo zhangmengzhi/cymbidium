@@ -13,3 +13,10 @@ cymbidium:
             login: http://localhost:8081/api/authoriry/login
             logout: http://localhost:8081/api/authoriry/logout
             islogin: http://localhost:8081/api/authoriry/islogin
+    fileservice:
+        linkUrl: localhost:8085/
+        uploadDir: C:\Temp\
+            
+multipart:
+    maxFileSize: 128KB
+    maxRequestSize: 128KB

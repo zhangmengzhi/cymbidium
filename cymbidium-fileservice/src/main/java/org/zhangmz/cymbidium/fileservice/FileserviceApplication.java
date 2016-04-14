@@ -14,7 +14,32 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 public class FileserviceApplication {
+	
 	public static void main(String[] args) {
         SpringApplication.run(FileserviceApplication.class, args);
     }
+
+//	/**
+//	 * 初始化时创建上传文件目录
+//	 */
+//	public static String ROOT = "classpath:/static/" ;
+//	
+//	@Bean
+//    CommandLineRunner init() {		
+//        return (String[] args) -> {
+//            new File(ROOT).mkdir();
+//        };
+//    }
+	
+//	/**
+//	 * 对上传的文件做一些限制
+//	 * @return
+//	 */
+//	@Bean  
+//    public MultipartConfigElement multipartConfigElement() {  
+//        MultiPartConfigFactory factory = new MultiPartConfigFactory();  
+//        factory.setMaxFileSize("128KB");  
+//        factory.setMaxRequestSize("128KB");  
+//        return factory.createMultipartConfig();  
+//    }
 }
