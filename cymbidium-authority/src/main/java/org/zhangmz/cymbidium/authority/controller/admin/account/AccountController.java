@@ -11,11 +11,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.zhangmz.cymbidium.modules.annotation.OperationIdentifier;
 import org.zhangmz.cymbidium.modules.constants.Messages;
 import org.zhangmz.cymbidium.modules.convert.JsonMapper;
 import org.zhangmz.cymbidium.authority.orm.model.Account;
@@ -91,6 +93,8 @@ public class AccountController {
      * 		这个方法应该改为异步调用方法。
      */
     @RequestMapping(value = "/delete/{id}")
+    @Transactional(readOnly=false)  //需要事务操作必须加入此注解
+    @OperationIdentifier(module="用户管理-用户管理",method="删除用户-delete",description="删除用户操作")
     public ModelAndView delete(@RequestParam("TOKEN") String token, @PathVariable Long id) {
     	ModelAndView result = new ModelAndView("admin/account/index");
     	String message;
