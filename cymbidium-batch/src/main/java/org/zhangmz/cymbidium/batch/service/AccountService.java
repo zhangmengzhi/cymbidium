@@ -18,7 +18,10 @@ public class AccountService {
     private AccountMapper accountMapper;
     
     // 管理员登陆方法
- 	public void checkRecords() {
+ 	public void checkRecords() {	
+ 		// 使用默认数据源
+ 		// DynamicDataSourceContextHolder.clearDataSourceType();
+ 		// updateDate();
  		// 使用数据源1
  		DynamicDataSourceContextHolder.setDataSourceType("ds1");
  		checkCount1();

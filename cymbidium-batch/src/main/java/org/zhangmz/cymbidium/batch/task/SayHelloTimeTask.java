@@ -1,4 +1,4 @@
-package org.zhangmz.cymbidium.batch.print;
+package org.zhangmz.cymbidium.batch.task;
 
 import java.text.SimpleDateFormat;  
 import java.util.Date;  
