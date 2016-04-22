@@ -12,12 +12,20 @@ spring:
     batch:
         # concurrent: false
         sayHelloTimeTask:
-            cronExpression: "*/10 * * * * ?"        
+            cronExpression: "*/10 * * * * ?"
+        systemEarlyWarningTask:
+            cronExpression: "*/10 * * * * ?"
+            # 按百分比，0-100
+            cpu: 2
+            jvm: 2
+            ram: 2
+            toEmail: 104446930@qq.com
+            toPhone: 13000000000
     # 主数据源，默认的
     datasource:
-        url: jdbc:mysql://localhost:3306/cymbidium1?useUnicode=true&characterEncoding=utf-8
-        username: cymbidium1
-        password: cymbidium1
+        url: jdbc:mysql://localhost:3306/cymbidium?useUnicode=true&characterEncoding=utf-8
+        username: cymbidium
+        password: cymbidium
         driver-class-name: com.mysql.jdbc.Driver
 
 # 更多数据源
@@ -25,12 +33,12 @@ custom:
     datasource:
         names: ds1,ds2
         ds1:
-            url: jdbc:mysql://localhost:3306/cymbidium1?useUnicode=true&characterEncoding=utf-8
-            username: cymbidium1
-            password: cymbidium1
+            url: jdbc:mysql://localhost:3306/cymbidium?useUnicode=true&characterEncoding=utf-8
+            username: cymbidium
+            password: cymbidium
             driver-class-name: com.mysql.jdbc.Driver
         ds2:
-            url: jdbc:mysql://localhost:3306/cymbidium2?useUnicode=true&characterEncoding=utf-8
-            username: cymbidium2
-            password: cymbidium2
+            url: jdbc:mysql://localhost:3306/cymbidium?useUnicode=true&characterEncoding=utf-8
+            username: cymbidium
+            password: cymbidium
             driver-class-name: com.mysql.jdbc.Driver
