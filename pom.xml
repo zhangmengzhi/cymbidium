@@ -10,8 +10,9 @@
 	<modules>
 		<module>cymbidium-modules</module>
 		<module>cymbidium-modulesweb</module>
-		<module>cymbidium-batch</module>
 		<module>cymbidium-authority</module>
+		<module>cymbidium-batch</module>
+		<module>cymbidium</module>
 	</modules>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

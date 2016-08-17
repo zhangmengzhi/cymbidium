@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+	<!-- 注意这个路径，不能有中文、空格 -->
+	<classPathEntry
+        location="C:\tmp\mysql-connector-java-5.1.37.jar" />
+        
+	<context id="DB2Tables" >
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/cymbidium" 
+			userId="cymbidium"
+			password="cymbidium" />
+			
+		<javaModelGenerator targetPackage="org.zhangmz.cymbidium.authority.orm.model" 
+							targetProject="cymbidium" />
+		
+		<sqlMapGenerator targetPackage="org.zhangmz.cymbidium.authority.orm.mapping" 
+						 targetProject="cymbidium" />
+		
+		<!-- type= ANNOTATEDMAPPER MIXEDMAPPER XMLMAPPER -->
+		<javaClientGenerator type="XMLMAPPER" 
+							 targetPackage="org.zhangmz.cymbidium.authority.orm.mapper" 	
+							 targetProject="cymbidium" />  
+
+		<table schema="" tableName="accounts" domainObjectName="Account" 
+			enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false" >
+		</table>
+		<table schema="" tableName="groups" domainObjectName="Group" 
+			enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false" >
+		</table>
+		<table schema="" tableName="endusers" domainObjectName="Enduser" 
+			enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false" >
+		</table>
+
+	</context>
+</generatorConfiguration>
