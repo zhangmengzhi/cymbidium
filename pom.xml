@@ -12,9 +12,6 @@
 		<module>cymbidium-modulesweb</module>
 		<module>cymbidium-batch</module>
 		<module>cymbidium-authority</module>
-		<module>cymbidium-service</module>
-		<module>cymbidium-data</module>
-		<module>cymbidium-fileservice</module>
 	</modules>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
