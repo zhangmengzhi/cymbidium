@@ -17,7 +17,6 @@ public class AccountService {
     @Autowired
     private AccountMapper accountMapper;
     
-    // 管理员登陆方法
  	public void checkRecords() {	
  		// 使用默认数据源
  		// DynamicDataSourceContextHolder.clearDataSourceType();

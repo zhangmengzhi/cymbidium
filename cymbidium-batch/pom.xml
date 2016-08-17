@@ -66,19 +66,7 @@
 	        <groupId>tk.mybatis</groupId>
 	        <artifactId>mapper</artifactId>
 	        <version>${mapper.version}</version>
-	    </dependency>   
-	    
-	    
-		<dependency>  
-		    <groupId>org.hyperic</groupId>  
-		    <artifactId>sigar</artifactId>  
-	        <version>1.6.4</version>
-	        <!-- 期望JDK、容器或使用者会提供这个依赖。如 TOMCAT 提供 servlet.jar。 -->
-	        <scope>system</scope>
-	        <!--本地jar的路径,相对或者绝对都可以-->  
-	        <systemPath>${project.basedir}/src/main/resources/lib/sigar.jar</systemPath>  
-		</dependency>  
-		     
+	    </dependency>   		     
 	</dependencies>
 
 	<build>
