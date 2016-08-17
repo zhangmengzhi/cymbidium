@@ -4,10 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;  
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import org.zhangmz.cymbidium.batch.service.AccountService;
 
 /**
  * 
@@ -24,9 +22,6 @@ public class SayHelloTimeTask {
 	  
 	private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	
-	@Autowired
-	AccountService accountService;
-	
 	/**
 	 * 
 	 * @Title: reportCurrentTime 
@@ -42,7 +37,6 @@ public class SayHelloTimeTask {
     public void reportCurrentTime() {
     	logger.debug("----------- begin -----------");
     	logger.debug("Hello, The time is now " + dateFormat.format(new Date()));
-    	accountService.checkRecords();
     	logger.debug("-----------  end  -----------");
     }
 }

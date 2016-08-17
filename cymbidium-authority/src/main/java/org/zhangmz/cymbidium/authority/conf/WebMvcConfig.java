@@ -40,7 +40,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
 import org.springframework.web.servlet.resource.ResourceHttpRequestHandler;
-import org.zhangmz.cymbidium.authority.helper.StringToDateConverter;
+import org.zhangmz.cymbidium.authority.utils.StringToDateConverter;
 
 /**
  * @author liuzh_3nofxnp

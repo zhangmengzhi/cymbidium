@@ -1,4 +1,4 @@
-package org.zhangmz.cymbidium.authority.helper;
+package org.zhangmz.cymbidium.authority.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
